@@ -77,6 +77,27 @@ export default function OrderModal({ isOpen, onClose, product }) {
         theme: {
           color: "#d4af37",
         },
+        config: {
+  display: {
+    preferences: {
+      show_default_blocks: true,
+    },
+
+    blocks: {
+      upi: {
+        name: "Pay using UPI",
+
+        instruments: [
+          {
+            method: "upi",
+          },
+        ],
+      },
+    },
+
+    sequence: ["block.upi"],
+  },
+},
       };
 
       const rzp = new window.Razorpay(options);
